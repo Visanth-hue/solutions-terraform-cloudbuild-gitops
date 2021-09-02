@@ -4,4 +4,4 @@ module "omni-postgres" {
   name                = pg-dev-omni
   database_version    = "POSTGRES_13"
   region              = "europe-west1"
-  private_network = "test-ingress"
+  private_network = "projects/ecstatic-backup-319018/global/networks/test-ingress"
