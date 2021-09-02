@@ -7,7 +7,7 @@ data "google_compute_network" "private-network" {
 module "omni-postgres" {
   source                          = "../../modules/sql/"
   project_id = var.project_id
-  name                = pg-dev-omni
+  master_instance_name        = pg-dev-omni
   database_version    = "POSTGRES_13"
   region              = "europe-west1"
   zone = "europe-west1-b"
@@ -16,6 +16,5 @@ module "omni-postgres" {
     ipv4_enabled        = false
     private_network     = "test-ingress"
     require_ssl         = true
-    authorized_networks = var.authorized_networks
   }
 }

@@ -8,10 +8,10 @@ variable "name" {
   description = "The name of the Cloud SQL resources"
 }
 
-variable "random_instance_name" {
-  type        = bool
+variable "master_instance_name" {
+  type        = string
   description = "Sets random suffix at the end of the Cloud SQL resource name"
-  default     = false
+  default     = "default"
 }
 
 // required
@@ -148,7 +148,7 @@ variable "ip_configuration" {
   })
   default = {
     authorized_networks = []
-    ipv4_enabled        = true
+    ipv4_enabled        = false
     private_network     = null
     require_ssl         = null
   }
