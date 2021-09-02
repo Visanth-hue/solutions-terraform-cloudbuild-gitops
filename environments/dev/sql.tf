@@ -6,7 +6,7 @@ data "google_compute_network" "private-network" {
 
 module "omni-postgres" {
   source                          = "../../modules/sql/"
-  project = var.project
+  project = "ecstatic-backup-319018"
   name                = pg-dev-omni
   database_version    = "POSTGRES_13"
   region              = "europe-west1"
