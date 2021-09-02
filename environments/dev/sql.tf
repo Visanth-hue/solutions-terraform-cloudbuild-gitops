@@ -10,6 +10,7 @@ module "omni-postgres" {
   name                = pg-dev-omni
   database_version    = "POSTGRES_13"
   region              = "europe-west1"
+  zone = "europe-west1-b"
 
   ip_configuration = {
     ipv4_enabled        = false
@@ -17,7 +18,4 @@ module "omni-postgres" {
     require_ssl         = true
     authorized_networks = var.authorized_networks
   }
-  location_preference {
-      zone = "europe-west1-b"
-    }
 }
