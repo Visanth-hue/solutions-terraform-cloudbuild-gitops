@@ -10,4 +10,10 @@ module "omni-postgres" {
   name                = pg-dev-omni
   database_version    = "POSTGRES_13"
   region              = "europe-west1"
-  private_network = google_compute_network.private_network.id
+
+  ip_configuration = {
+    ipv4_enabled        = false
+    private_network     = "test-ingress"
+    require_ssl         = true
+    authorized_networks = var.authorized_networks
+  }
