@@ -17,3 +17,4 @@ module "omni-postgres" {
     require_ssl         = true
     authorized_networks = var.authorized_networks
   }
+}
