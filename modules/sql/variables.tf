@@ -9,9 +9,9 @@ variable "name" {
 }
 
 variable "random_instance_name" {
-  type        = string
+  type        = bool
   description = "Sets random suffix at the end of the Cloud SQL resource name"
-  default     = "default"
+  default     = false
 }
 
 // required

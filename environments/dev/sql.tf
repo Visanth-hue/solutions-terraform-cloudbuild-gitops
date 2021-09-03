@@ -1,8 +1,3 @@
-data "google_compute_network" "private-network" {
-  name = "test-ingress"
-}
-
-
 
 module "omni-postgres" {
   source               = "../../modules/sql/"
@@ -24,7 +19,7 @@ module "omni-postgres" {
   ip_configuration = {
     ipv4_enabled    = false
     require_ssl     = true
-    private_network = "test-ingress"
+    private_network = "projects/ecstatic-backup-319018/global/networks/test-ingress"
     authorized_networks = []
 
   }
