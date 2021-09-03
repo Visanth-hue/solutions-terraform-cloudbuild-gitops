@@ -7,7 +7,6 @@ data "google_compute_network" "private-network" {
 module "omni-postgres" {
   source               = "../../modules/sql/"
   name                 = "pg-db-omnt-dev"
-  random_instance_name = true
   project_id           = "ecstatic-backup-319018"
   database_version     = "POSTGRES_13"
   region               = "us-central1"
