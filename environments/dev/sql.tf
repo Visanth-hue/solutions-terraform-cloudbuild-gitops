@@ -40,7 +40,7 @@ module "omni-postgres" {
   }
 
 
-  disk_type    = ""PD_HDD""
+  disk_type    = "PD_HDD"
   user_labels  = { bar = "baz" }
 
   db_name      = "default-1"
