@@ -40,8 +40,6 @@ module "omni-postgres" {
   user_labels  = { bar = "baz" }
 
   db_name      = "default-1"
-  db_charset   = "utf8mb4"
-  db_collation = "utf8mb4_general_ci"
 
   user_name     = "tftest"
   user_password = "foobar"
