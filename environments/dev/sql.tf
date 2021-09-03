@@ -37,6 +37,7 @@ module "omni-postgres" {
     transaction_log_retention_days = null
     retained_backups               = 365
     retention_unit                 = "COUNT"
+    point_in_time_recovery_enabled  = false
   }
 
 
