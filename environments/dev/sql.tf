@@ -9,7 +9,7 @@ module "omni-postgres" {
   deletion_protection = false
 
   // Master configurations
-  tier                            = "db-n1-standard-1"
+  tier                            = "db-custom-2-3.75"
   zone                            = "us-central1-c"
   availability_type               = "ZONAL"
   maintenance_window_day          = 7
