@@ -1,7 +1,7 @@
 
 module "omni-postgres" {
   source               = "../../modules/sql/"
-  randon_instance_name                 = "pg-db-omnt-dev"
+  name                 = "pg-db-omnt-dev"
   project_id           = "ecstatic-backup-319018"
   database_version     = "POSTGRES_13"
   region               = "us-central1"
