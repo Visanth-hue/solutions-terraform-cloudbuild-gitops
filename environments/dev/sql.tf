@@ -25,11 +25,12 @@ module "omni-postgres" {
     ipv4_enabled    = false
     require_ssl     = true
     private_network = "test-ingress"
+    authorized_networks = []
 
   }
 
   backup_configuration = {
-    enabled                        = true
+    enabled                        = false
     binary_log_enabled             = false
     start_time                     = "20:55"
     location                       = null
