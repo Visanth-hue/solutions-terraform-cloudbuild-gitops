@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "ecstatic-backup-319018-tfstate"
+    bucket = "cloud-logs-auto"
     prefix = "env/dev"
   }
 }

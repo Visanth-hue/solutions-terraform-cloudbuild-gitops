@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-logsBucket: 'gs://mylogsbucket-1'
+logsBucket: 'gs://cloud-logs-auto'
 steps:
 - id: 'branch name'
   name: 'alpine'
