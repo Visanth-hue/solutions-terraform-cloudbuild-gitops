@@ -28,7 +28,7 @@ module "gke-dev-ostr" {
   enable_private_endpoint           = true
   enable_private_nodes              = true
   master_ipv4_cidr_block            = "172.16.20.0/28"
-  cluster_autoscaling               = var.cluster_autoscaling
+  cluster_autoscaling               = true
 
   authenticator_security_group      = "gke-security-groups@vasivas.com"
 
