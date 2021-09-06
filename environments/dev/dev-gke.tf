@@ -18,6 +18,7 @@ module "gke-dev-ostr" {
   region                            = "europe-west1"
   zones                             = ["europe-west1-b", "europe-west1-c"]
   network_project_id                = "service-325013"
+  network                           = "shared-vpc"
   subnetwork                        = "dev"
   ip_range_pods                     = "pods"
   ip_range_services                 = "services"
