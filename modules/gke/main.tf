@@ -1,7 +1,7 @@
 data "google_compute_zones" "available" {
   provider = google
 
-  project = var.project_id
+  project = "extreme-325013"
   region  = local.region
 }
 
