@@ -57,6 +57,8 @@ locals {
     provider = null
   }]
 
+  cluster_network_tag                        = "gke-${var.name}"
+
 
   cluster_authenticator_security_group = var.authenticator_security_group == null ? [] : [{
     security_group = var.authenticator_security_group
@@ -76,6 +78,13 @@ locals {
   cluster_workload_identity_config = !local.workload_identity_enabled ? [] : var.identity_namespace == "enabled" ? [{
     identity_namespace = "${var.project_id}.svc.id.goog" }] : [{ identity_namespace = var.identity_namespace
   }]
+
+  service_account_list = compact(
+    concat(
+      google_service_account.cluster_service_account.*.email,
+      ["dummy"],
+    ),
+  )
 
 }
 
