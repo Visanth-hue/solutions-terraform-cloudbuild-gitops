@@ -1,3 +1,4 @@
+/*
 module "gke-dev-cluster-sa" {
   source = "../../modules/sa"
 
@@ -5,7 +6,7 @@ module "gke-dev-cluster-sa" {
   name   = "gke-ostr-dev"
 
 }
-
+*/
 // This file contains the gke-dev cluster resource definitions
 
 
