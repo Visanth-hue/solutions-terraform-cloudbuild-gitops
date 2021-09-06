@@ -117,7 +117,7 @@ resource "google_container_cluster" "primary" {
     initial_node_count = var.initial_node_count
 
     node_config {
-      service_account = lookup(var.node_pools[0], "service_account", local.service_account)
+      service_account = lookup(var.node_pools[0], "service_account", "")
 
       dynamic "workload_metadata_config" {
         for_each = local.cluster_node_metadata_config
