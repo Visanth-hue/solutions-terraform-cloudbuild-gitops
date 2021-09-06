@@ -193,10 +193,10 @@ variable "cluster_autoscaling" {
   })
   default = {
     enabled       = true
-    max_cpu_cores = 0
-    min_cpu_cores = 0
-    max_memory_gb = 0
-    min_memory_gb = 0
+    max_cpu_cores = 10
+    min_cpu_cores = 2
+    max_memory_gb = 32
+    min_memory_gb = 16
     gpu_resources = []
   }
   description = "Cluster autoscaling configuration. See [more details](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters#clusterautoscaling)"
