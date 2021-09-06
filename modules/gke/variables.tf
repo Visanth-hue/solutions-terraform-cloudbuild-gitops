@@ -346,6 +346,30 @@ variable "default_max_pods_per_node" {
   default     = 110
 }
 
+variable "deploy_using_private_endpoint" {
+  type        = bool
+  description = "(Beta) A toggle for Terraform and kubectl to connect to the master's internal IP address during deployment."
+  default     = false
+}
+
+variable "enable_private_endpoint" {
+  type        = bool
+  description = "(Beta) Whether the master's internal IP address is used as the cluster endpoint"
+  default     = false
+}
+
+variable "enable_private_nodes" {
+  type        = bool
+  description = "(Beta) Whether nodes have internal IP addresses only"
+  default     = false
+}
+
+variable "master_ipv4_cidr_block" {
+  type        = string
+  description = "(Beta) The IP range in CIDR notation to use for the hosted master network"
+  default     = "10.0.0.0/28"
+}
+
 variable "authenticator_security_group" {
   type        = string
   description = "The name of the RBAC security group for use with Google security groups in Kubernetes RBAC. Group name must be in format gke-security-groups@yourdomain.com"
