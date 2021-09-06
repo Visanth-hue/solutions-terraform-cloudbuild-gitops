@@ -8,6 +8,12 @@ module "gke-dev-cluster-sa" {
 
 // This file contains the gke-dev cluster resource definitions
 
+resource "google_service_account" "cluster_service_account" {
+  project      = "extreme-325013"
+  account_id   = "tf-gke-dev"
+  display_name = "Terraform-managed service account for cluster dev"
+}
+
 // create sa for dev cluster
 
 module "gke-dev-ostr" {
