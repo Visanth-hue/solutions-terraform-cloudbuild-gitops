@@ -10,6 +10,12 @@ resource "random_shuffle" "available_zones" {
   result_count = 3
 }
 
+resource "google_service_account" "cluster_service_account" {
+  project      = "extreme-325013"
+  account_id   = "tf-gke-dev"
+  display_name = "Terraform-managed service account for cluster dev"
+}
+
 locals {
   // ID of the cluster
   cluster_id = google_container_cluster.primary.id
@@ -80,7 +86,7 @@ locals {
   }]
   
   service_account = (var.service_account == "" || var.service_account == "create") && var.create_service_account ? local.service_account_list[0] : var.service_account
-  
+
   service_account_list = compact(
     concat(
       google_service_account.cluster_service_account.*.email,
