@@ -29,7 +29,7 @@ steps:
   entrypoint: 'sh'
   args: 
   - '-c'
-  - 'terraform init upgrade'
+  - /bin/bash 'terraform init -upgarde'
   - |
       if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME
@@ -55,7 +55,6 @@ steps:
   entrypoint: 'sh'
   args: 
   - '-c'
-  - 'terraform init upgrade'
   - | 
       if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME
@@ -82,7 +81,6 @@ steps:
   entrypoint: 'sh'
   args: 
   - '-c'
-  - 'terraform init upgrade'
   - | 
       if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME      
