@@ -2,13 +2,13 @@ terraform {
   required_version = ">=0.13"
 
   required_providers {
-    google-beta = {
-      source  = "hashicorp/google-beta"
+    google = {
+      source  = "hashicorp/google"
       version = ">= 3.39.0, <4.0.0"
     }
 
     google = {
-      source  = "hashicorp/google-beta"
+      source  = "hashicorp/google"
       version = "> 3.77.0, <4.0.0"
       configuration_aliases = [ google.alternate ]
     }
