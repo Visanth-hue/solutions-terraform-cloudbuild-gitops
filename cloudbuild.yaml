@@ -29,11 +29,10 @@ steps:
   entrypoint: 'sh'
   args: 
   - '-c'
-  - /bin/bash 'terraform init -upgarde'
   - |
       if [ -d "environments/$BRANCH_NAME/" ]; then
         cd environments/$BRANCH_NAME
-        terraform init
+        terraform init -upgarde
       else
         for dir in environments/*/
         do 
@@ -44,7 +43,7 @@ steps:
           echo "*************** TERRAFORM INIT ******************"
           echo "******* At environment: ${env} ********"
           echo "*************************************************"
-          terraform init || exit 1
+          terraform init -upgarde || exit 1
           cd ../../
         done
       fi 
