@@ -14,6 +14,7 @@ module "gke-dev-cluster-sa" {
 
 module "gke-dev-ostr" {
   source                            = "../../modules/gke/"
+  provider                          = google.gke
   project_id                        = "extreme-325013"
   name                              = "gke-ostr-dev"
   regional                          = false
