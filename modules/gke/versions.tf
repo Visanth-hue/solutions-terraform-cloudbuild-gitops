@@ -8,9 +8,9 @@ terraform {
     }
 
     google = {
-      alias = "gke"  
       source  = "hashicorp/google-beta"
       version = "> 3.77.0, <4.0.0"
+      configuration_aliases = [ google.alternate ]
     }
 
     kubernetes = {
