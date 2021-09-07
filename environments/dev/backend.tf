@@ -16,6 +16,6 @@
 terraform {
   backend "gcs" {
     bucket = "cloud-logs-auto"
-    prefix = "env/dev"
+    prefix = "env/dev1"
   }
 }
