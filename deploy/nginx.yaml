@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: flux
+      app: fluxcd
   replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
