@@ -66,7 +66,7 @@ spec:
         # There are no ":latest" images for flux. Find the most recent
         # release or image version at https://hub.docker.com/r/fluxcd/flux/tags
         # and replace the tag here.
-        image: fluxcd/flux
+        image: europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd
         imagePullPolicy: IfNotPresent
         resources:
           requests:
