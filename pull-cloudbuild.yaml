@@ -1,0 +1,18 @@
+logsBucket: 'gs://cloud-logs-auto'
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker pull fluxcd/flux:1.24.1 ']
+# Sanity Check: make sure basic functionality works
+
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker tag fluxcd/flux:1.24.1 europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd ']
+
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker push europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd ']
+
+images:
+  - 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd'
+tags: ['cloud-builders-community']
