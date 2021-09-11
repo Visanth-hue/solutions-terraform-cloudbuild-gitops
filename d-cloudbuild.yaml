@@ -1,14 +1,20 @@
 logsBucket: 'gs://cloud-logs-auto'
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['pull', '-t', 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd/flux', 'https://hub.docker.com/r/fluxcd/flux' ]
+  entrypoint: 'bash'
+  args: ['-c', 'docker pull fluxcd/flux ']
 # Sanity Check: make sure basic functionality works
-- name: 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd/flux'
+
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker build -t europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd fluxcd/flux']
+
+- name: 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd'
   args: ['version', '--client']
   env:
     - SKIP_CLUSTER_CONFIG=true
 images:
-  - 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd/flux'
+  - 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd'
 tags: ['cloud-builders-community']
 
 
