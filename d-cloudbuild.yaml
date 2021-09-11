@@ -9,10 +9,10 @@ steps:
   entrypoint: 'bash'
   args: ['-c', 'docker tag fluxcd/flux:1.24.1 europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd ']
 
-- name: 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd'
-  args: ['version', '--client']
-  env:
-    - SKIP_CLUSTER_CONFIG=true
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker push europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd ']
+
 images:
   - 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd'
 tags: ['cloud-builders-community']
