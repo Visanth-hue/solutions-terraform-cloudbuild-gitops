@@ -1,0 +1,22 @@
+
+logsBucket: 'gs://cloud-logs-auto'
+steps:
+
+# fetch GKE cluster credentials to be used for helm step
+- name: 'gcr.io/cloud-builders/kubectl'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
+  - 'CLOUDSDK_CORE_PROJECT=extreme-325013'
+  - 'KUBECONFIG=/workspace/.kube/config'
+  args: ['cluster-info']
+
+- name: 'gcr.io/cloud-builders/kubectl'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
+  - 'CLOUDSDK_CORE_PROJECT=extreme-325013'
+  - 'KUBECONFIG=/workspace/.kube/config'
+  args: ['apply', '-f', './deploy']  
+
+
