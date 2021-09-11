@@ -1,0 +1,15 @@
+logsBucket: 'gs://cloud-logs-auto'
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd/flux', ]
+# Sanity Check: make sure basic functionality works
+- name: 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd/flux'
+  args: ['version', '--client']
+  env:
+    - SKIP_CLUSTER_CONFIG=true
+images:
+  - 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd/flux'
+tags: ['cloud-builders-community']
+
+
+
