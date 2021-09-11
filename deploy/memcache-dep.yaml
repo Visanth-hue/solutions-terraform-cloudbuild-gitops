@@ -19,7 +19,7 @@ spec:
         beta.kubernetes.io/os: linux
       containers:
       - name: memcached
-        image: memcached:1.6.10-alpine
+        image: memcached
         imagePullPolicy: IfNotPresent
         args:
         - -m 512   # Maximum memory to use, in megabytes
