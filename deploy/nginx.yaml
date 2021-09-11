@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: fluxcd-deployment
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: flux
   replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: nginx
+        app: fluxcd
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
+      - name: fluxcd
+        image: fluxcd/flux:1.24.1
         ports:
         - containerPort: 80
