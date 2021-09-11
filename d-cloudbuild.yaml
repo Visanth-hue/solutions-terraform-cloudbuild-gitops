@@ -11,7 +11,7 @@ steps:
 
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args: ['-c', 'docker push europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd ']
+  args: ['-c', 'docker push europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd ']
 
 images:
   - 'europe-west1-docker.pkg.dev/auto-325017/plat/fluxcd'
